@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -11,9 +12,11 @@ export default defineConfig({
       devOptions: { enabled: true },
       manifest: {
         name: 'My Vue PWA',
+        start_url: '/',
         short_name: 'VuePWA',
         description: 'A Vue 3 PWA with Vite',
-        theme_color: '#ffffff',
+        display: "standalone",
+        theme_color: '#42b883',
         icons:
           [
             {
@@ -44,4 +47,9 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });

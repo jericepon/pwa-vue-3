@@ -100,6 +100,12 @@ npm run preview
 
 Open your app in Chrome, then check Application > Manifest and Service Workers in DevTools. You should see your PWA installable.
 
+## Generate PWA asset
+
+```bash
+npx pwa-asset-generator ./public/vite.svg icons
+```
+
 ##  Add a Custom Install Button in Vue 3
 
 Mobile Chrome & Edge let you catch the event `beforeinstallprompt` to show your own button.
@@ -160,11 +166,9 @@ Mobile Chrome & Edge let you catch the event `beforeinstallprompt` to show your 
 #### 2. Use it in a component (e.g. `App.vue`)
 
 ```vue
-  <script setup
+	<script setup
 	
-	  lang="ts">  import { usePwaInstall } from './composables/usePwaInstall'  const { isInstallable, install } = usePwaInstall()
-
-  </script>
+	  lang="ts">  import { usePwaInstall } from './composables/usePwaInstall'  const { isInstallable, install } = usePwaInstall() </script>
 	
 	<template>
 	
