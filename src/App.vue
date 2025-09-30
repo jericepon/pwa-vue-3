@@ -2,7 +2,7 @@
     <template>
       <button v-if="installPrompt" @click="installPWA">Install App</button>
 
-      <h1>This is PWA setup in Vite & Vue 3</h1>
+      <h1>This is PWA setup in Vite & Vue 3!</h1>
     </template>
 
     <script setup>
